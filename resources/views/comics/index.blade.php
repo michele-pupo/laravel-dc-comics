@@ -4,7 +4,6 @@
     
     <div class="container py-5">
         <h1 class="text-center">Lista dei fumetti</h1>
-        @dump($comics)
         <div class="row row-cols-4 justify-content-between">
             @foreach ($comics as $comic)
             <div class="card h-100">
