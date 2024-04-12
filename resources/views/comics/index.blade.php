@@ -12,15 +12,17 @@
                     <h3 class="comic-title">{{$comic->title}}</h3>
                     <h4 class="comic-series">{{$comic->series}}</h4>
                     <h5 class="comic-date text-info">{{$comic->sale_date}}</h5>
-                    <span class="comic-price text-danger ">{{$comic->price}}</span><br>
+                    <h6 class="comic-price text-danger pb-4">{{$comic->price}}</h6>
                     <button class="btn btn-info"><a class="text-decoration-none text-black" href="{{route('comics.show', $comic->id)}}">Visualizza</a></button>
                 </div>
             </div>
             @endforeach
         </div>
 
-        <button class="btn btn-primary mt-5"><a class="text-decoration-none " href="{{route('comics.create')}}">Aggiungi un fumetto</a></button>
-        
+        <div class="d-flex justify-content-center">
+            <button class="btn btn-primary mt-5"><a class="text-decoration-none " href="{{route('comics.create')}}">Aggiungi un fumetto</a></button>
+        </div>
+
     </div>
 
 @endsection

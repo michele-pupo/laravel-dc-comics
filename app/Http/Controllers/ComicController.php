@@ -86,13 +86,15 @@ class ComicController extends Controller
         $comic->save();
 
         return redirect()->route('comics.show', $comic->id);
-        
+
     }
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Comic $comic)
     {
-        //
+        $comic->delete();
+
+        return redirect()->route('comics.index');
     }
 }
