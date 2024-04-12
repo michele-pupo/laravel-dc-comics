@@ -7,6 +7,8 @@
             <img class="w-100" src="{{$comic->thumb}}" alt="{{$comic->title}}">
         </div>
         <p class="py-3">{{$comic->description}}</p>
-        
+    </div>
+    <div class="container">
+        <button class="btn btn-warning mt-5"><a class="text-decoration-none text-black" href="{{route('comics.edit', $comic->id)}}">Modifica fumetto</a></button>
     </div>
 @endsection

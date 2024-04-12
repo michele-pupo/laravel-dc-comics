@@ -4,9 +4,11 @@
     <div class="container py-5">
         <h1 class="text-center">Modifica il fumetto</h1>
 
-        <form action="{{route('comics.store')}}" method="POST">
+        <form action="{{route('comics.update', $comic->id)}}" method="POST">
             @csrf
 
+            @method('PUT')
+            
             <div class="mb-3">
                 <label for="title" class="form-label">Titolo</label>
                 <input type="text" class="form-control" id="exampleInputEmail1" name="title" value="{{$comic->title}}" required>
