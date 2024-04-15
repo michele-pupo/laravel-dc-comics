@@ -11,7 +11,7 @@
             
             <div class="mb-3">
                 <label for="title" class="form-label">Titolo</label>
-                <input type="text" class="form-control @error('title') is-invalid @enderror" id="exampleInputEmail1" name="title" value="{{$comic->title}}" required>
+                <input type="text" class="form-control @error('title') is-invalid @enderror" id="exampleInputEmail1" name="title" value="{{old('title') ?? $comic->title}}" required>
                 @error('title')
                 <div class="invalid-feedback">
                     {{$message}}
@@ -21,7 +21,7 @@
 
             <div class="mb-3">
                 <label for="description" class="form-label">Descrizione</label>
-                <textarea type="text" class="form-control @error('description') is-invalid @enderror" id="exampleInputEmail1" rows="8" name="description" required>{{$comic->description}}</textarea>
+                <textarea type="text" class="form-control @error('description') is-invalid @enderror" id="exampleInputEmail1" rows="8" name="description" required>{{old('description') ?? $comic->description}}</textarea>
                 @error('description')
                 <div class="invalid-feedback">
                     {{$message}}
@@ -46,7 +46,7 @@
 
             <div class="mb-3">
                 <label for="sale_date" class="form-label">Data uscita</label>
-                <input type="data" class="form-control @error('sale_date') is-invalid @enderror" id="exampleInputEmail1" name="sale_date" value="{{$comic->sale_date}}">
+                <input type="data" class="form-control @error('sale_date') is-invalid @enderror" id="exampleInputEmail1" name="sale_date" value="{{old('sale_date') ?? $comic->sale_date}}" required>
                 @error('sale_date')
                 <div class="invalid-feedback">
                     {{$message}}
@@ -56,7 +56,7 @@
 
             <div class="mb-3">
                 <label for="type" class="form-label">Tipo</label>
-                <input type="text" class="form-control @error('type') is-invalid @enderror" id="exampleInputEmail1" name="type" value="{{$comic->type}}">
+                <input type="text" class="form-control @error('type') is-invalid @enderror" id="exampleInputEmail1" name="type" value="{{old('type') ?? $comic->type}}" required>
                 @error('type')
                 <div class="invalid-feedback">
                     {{$message}}
@@ -71,7 +71,7 @@
 
             <div class="mb-3">
                 <label for="writers" class="form-label">Scrittori</label>
-                <textarea type="text" class="form-control @error('writers') is-invalid @enderror" id="exampleInputEmail1" name="writers">{{$comic->writers}}</textarea>
+                <textarea type="text" class="form-control @error('writers') is-invalid @enderror" id="exampleInputEmail1" name="writers">{{old('writers') ?? $comic->writers}}</textarea required>
                 @error('writers')
                 <div class="invalid-feedback">
                     {{$message}}
