@@ -75,6 +75,9 @@ class ComicController extends Controller
      */
     public function update(Request $request, Comic $comic)
     {
+
+        $this->validation($request->all());
+
         // dd($request);
 
         $comic->title = $request->title;
@@ -108,14 +111,28 @@ class ComicController extends Controller
 
         $validator = Validator::make($data, [
             'title' => 'required|max:255',
-            'description' =>'required|max:2000',
-            'thumb' => 'max:2000|nullable',
+            'description' =>'required|max:5000',
+            'thumb' => 'nullable',
             'price' => 'max:255|nullable',
             'series' => 'max:255|nullable',
             'sale_date' => 'required|date|nullable',
             'type' => 'required|max:255|nullable',
             'artists' => 'max:2000|nullable',
-            'writers' => 'required|max:2000|nullable',
+            'writers' => 'required|max:3000|nullable',
+        ], [
+            'title.required' => 'Il titolo è obbligatorio.',
+            'title.max' => 'Il titolo non può superare i :max caratteri.',
+            'description.required' => 'La descrizione è obbligatoria.',
+            'description.max' => 'La descrizione non può superare i :max caratteri.',
+            'price.max' => 'Il prezzo non può superare i :max caratteri.',
+            'series.max' => 'Il campo serie non può superare i :max caratteri.',
+            'sale_date.required' => 'La data di uscita è obbligatoria.',
+            'sale_date.date' => 'La data di vendita deve essere valida.',
+            'type.required' => 'Il tipo è obbligatorio.',
+            'type.max' => 'Il tipo non può superare i :max caratteri.',
+            'artists.max' => 'Il campo artisti non può superare i :max caratteri.',
+            'writers.required' => 'Il campo scrittori è obbligatorio.',
+            'writers.max' => 'Il campo scrittori non può superare i :max caratteri.',
         ])->validate();
     }
 }
