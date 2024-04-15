@@ -120,19 +120,10 @@ class ComicController extends Controller
             'artists' => 'max:2000|nullable',
             'writers' => 'required|max:3000|nullable',
         ], [
-            'title.required' => 'Il titolo è obbligatorio.',
-            'title.max' => 'Il titolo non può superare i :max caratteri.',
-            'description.required' => 'La descrizione è obbligatoria.',
-            'description.max' => 'La descrizione non può superare i :max caratteri.',
-            'price.max' => 'Il prezzo non può superare i :max caratteri.',
-            'series.max' => 'Il campo serie non può superare i :max caratteri.',
-            'sale_date.required' => 'La data di uscita è obbligatoria.',
+            // 
+            'required' => 'Il campo :attribute deve essere inserito',
             'sale_date.date' => 'La data di vendita deve essere valida.',
-            'type.required' => 'Il tipo è obbligatorio.',
-            'type.max' => 'Il tipo non può superare i :max caratteri.',
-            'artists.max' => 'Il campo artisti non può superare i :max caratteri.',
-            'writers.required' => 'Il campo scrittori è obbligatorio.',
-            'writers.max' => 'Il campo scrittori non può superare i :max caratteri.',
+            'max' => 'Il campo :attribute deve essere :max caratteri',
         ])->validate();
     }
 }

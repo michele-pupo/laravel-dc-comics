@@ -40,8 +40,8 @@
             </div>
 
             <div class="mb-3">
-                <label for="tipe" class="form-label">Tipo</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" name="tipe" value="{{$comic->type}}">
+                <label for="type" class="form-label">Tipo</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" name="type" value="{{$comic->type}}">
             </div>
 
             <div class="mb-3">
