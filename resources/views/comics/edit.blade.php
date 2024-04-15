@@ -11,12 +11,22 @@
             
             <div class="mb-3">
                 <label for="title" class="form-label">Titolo</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" name="title" value="{{$comic->title}}" required>
+                <input type="text" class="form-control @error('title') is-invalid @enderror" id="exampleInputEmail1" name="title" value="{{$comic->title}}" required>
+                @error('title')
+                <div class="invalid-feedback">
+                    {{$message}}
+                </div>
+                @enderror
             </div>
 
             <div class="mb-3">
                 <label for="description" class="form-label">Descrizione</label>
-                <textarea type="text" class="form-control" id="exampleInputEmail1" rows="8" name="description" required>{{$comic->description}}</textarea>
+                <textarea type="text" class="form-control @error('description') is-invalid @enderror" id="exampleInputEmail1" rows="8" name="description" required>{{$comic->description}}</textarea>
+                @error('description')
+                <div class="invalid-feedback">
+                    {{$message}}
+                </div>
+                @enderror
             </div>
 
             <div class="mb-3">
@@ -36,12 +46,22 @@
 
             <div class="mb-3">
                 <label for="sale_date" class="form-label">Data uscita</label>
-                <input type="data" class="form-control" id="exampleInputEmail1" name="sale_date" value="{{$comic->sale_date}}">
+                <input type="data" class="form-control @error('sale_date') is-invalid @enderror" id="exampleInputEmail1" name="sale_date" value="{{$comic->sale_date}}">
+                @error('sale_date')
+                <div class="invalid-feedback">
+                    {{$message}}
+                </div>
+                @enderror
             </div>
 
             <div class="mb-3">
                 <label for="type" class="form-label">Tipo</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" name="type" value="{{$comic->type}}">
+                <input type="text" class="form-control @error('type') is-invalid @enderror" id="exampleInputEmail1" name="type" value="{{$comic->type}}">
+                @error('type')
+                <div class="invalid-feedback">
+                    {{$message}}
+                </div>
+                @enderror
             </div>
 
             <div class="mb-3">
@@ -51,7 +71,12 @@
 
             <div class="mb-3">
                 <label for="writers" class="form-label">Scrittori</label>
-                <textarea type="text" class="form-control" id="exampleInputEmail1" name="writers">{{$comic->writers}}</textarea>
+                <textarea type="text" class="form-control @error('writers') is-invalid @enderror" id="exampleInputEmail1" name="writers">{{$comic->writers}}</textarea>
+                @error('writers')
+                <div class="invalid-feedback">
+                    {{$message}}
+                </div>
+                @enderror
             </div>
 
             <button type="submit" class="btn btn-primary">Salva</button>
