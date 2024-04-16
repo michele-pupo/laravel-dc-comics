@@ -122,8 +122,18 @@ class ComicController extends Controller
         ], [
             // 
             'required' => 'Il campo :attribute deve essere inserito',
-            'sale_date.date' => 'La data di vendita deve essere valida.',
+            'sale_date.date' => 'La data di vendita deve essere valida',
             'max' => 'Il campo :attribute deve essere :max caratteri',
+        ], [
+            'title' => 'titolo',
+            'description' => 'descrizione',
+            'thumb' => 'copertina',
+            'price' => 'prezzo',
+            'serie' => 'serie',
+            'sale_date' => 'data di uscita',
+            'type' => 'tipo',
+            'artists' => 'artisti',
+            'writers' => 'scrittori',
         ])->validate();
     }
 }
